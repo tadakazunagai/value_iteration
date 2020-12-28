@@ -40,18 +40,18 @@ public:
 			assert(m_transition[1] != NULL);
 			assert(m_transition[2] != NULL);
 			if (m_transition[0]->GetValue() >= m_transition[1]->GetValue()
-				&& m_transition[0]->GetValue() >= m_transition[2]->GetValue()
-				&& m_transition[0]->GetValue() >= m_transition[3]->GetValue()) {
+			    && m_transition[0]->GetValue() >= m_transition[2]->GetValue()
+			    && m_transition[0]->GetValue() >= m_transition[3]->GetValue()) {
 				m_value = m_transition[0]->GetValue() * 0.7f + m_transition[1]->GetValue() * 0.1f + m_transition[2]->GetValue() * 0.1f + m_transition[3]->GetValue() * 0.1f;
 			}
 			else if (m_transition[1]->GetValue() >= m_transition[0]->GetValue()
-					 && m_transition[1]->GetValue() >= m_transition[2]->GetValue()
-					 && m_transition[1]->GetValue() >= m_transition[3]->GetValue()) {
+				 && m_transition[1]->GetValue() >= m_transition[2]->GetValue()
+				 && m_transition[1]->GetValue() >= m_transition[3]->GetValue()) {
 				m_value = m_transition[0]->GetValue() * 0.1f + m_transition[1]->GetValue() * 0.7f + m_transition[2]->GetValue() * 0.1f + m_transition[3]->GetValue() * 0.1f;
 			}
 			else if (m_transition[2]->GetValue() >= m_transition[0]->GetValue()
-					 && m_transition[2]->GetValue() >= m_transition[1]->GetValue()
-					 && m_transition[2]->GetValue() >= m_transition[3]->GetValue()) {
+				 && m_transition[2]->GetValue() >= m_transition[1]->GetValue()
+				 && m_transition[2]->GetValue() >= m_transition[3]->GetValue()) {
 				m_value = m_transition[0]->GetValue() * 0.1f + m_transition[1]->GetValue() * 0.1f + m_transition[2]->GetValue() * 0.7f + m_transition[3]->GetValue() * 0.1f;
 			}
 			else {
@@ -64,11 +64,11 @@ public:
 			assert(m_transition[0] != NULL);
 			assert(m_transition[1] != NULL);
 			if (m_transition[0]->GetValue() >= m_transition[1]->GetValue()
-				&& m_transition[0]->GetValue() >= m_transition[2]->GetValue()) {
+			    && m_transition[0]->GetValue() >= m_transition[2]->GetValue()) {
 				m_value = m_transition[0]->GetValue() * 0.8f + m_transition[1]->GetValue() * 0.1f + m_transition[2]->GetValue() * 0.1f;
 			}
 			else if (m_transition[1]->GetValue() >= m_transition[0]->GetValue()
-					 && m_transition[1]->GetValue() >= m_transition[2]->GetValue()) {
+				 && m_transition[1]->GetValue() >= m_transition[2]->GetValue()) {
 				m_value = m_transition[0]->GetValue() * 0.1f + m_transition[1]->GetValue() * 0.8f + m_transition[2]->GetValue() * 0.1f;
 			}
 			else {
@@ -146,7 +146,7 @@ int main(int argc, char *argv[])
 		assert(s1.CanTransit(s2) == s2.CanTransit(s1));
 		assert(s2.CanTransit(sg) == sg.CanTransit(s2));
 		printf("%s    %s    %s\n",
-			   s4.CanTransit(s1) ? "|" : " ", s5.CanTransit(s2) ? "|" : " ", s6.CanTransit(sg) ? "|" : " ");
+		       s4.CanTransit(s1) ? "|" : " ", s5.CanTransit(s2) ? "|" : " ", s6.CanTransit(sg) ? "|" : " ");
 		assert(s1.CanTransit(s4) == s4.CanTransit(s1));
 		assert(s2.CanTransit(s5) == s5.CanTransit(s2));
 		assert(sg.CanTransit(s6) == s6.CanTransit(sg));
@@ -154,7 +154,7 @@ int main(int argc, char *argv[])
 		assert(s4.CanTransit(s5) == s5.CanTransit(s4));
 		assert(s5.CanTransit(s6) == s6.CanTransit(s5));
 		printf("%s    %s    %s\n",
-			   s7.CanTransit(s4) ? "|" : " ", s8.CanTransit(s5) ? "|" : " ", s9.CanTransit(s6) ? "|" : " ");
+		       s7.CanTransit(s4) ? "|" : " ", s8.CanTransit(s5) ? "|" : " ", s9.CanTransit(s6) ? "|" : " ");
 		assert(s4.CanTransit(s7) == s7.CanTransit(s4));
 		assert(s5.CanTransit(s8) == s8.CanTransit(s5));
 		assert(s6.CanTransit(s9) == s9.CanTransit(s6));
@@ -183,17 +183,17 @@ int main(int argc, char *argv[])
 			int count = 0;
 			while ((
 #if 1 // calculation order
-					   s1.UpdateValue() && s2.UpdateValue()
-					   && s4.UpdateValue() && s5.UpdateValue() && s6.UpdateValue()
-					   && s7.UpdateValue() && s8.UpdateValue() && s9.UpdateValue()
+				       s1.UpdateValue() && s2.UpdateValue()
+				       && s4.UpdateValue() && s5.UpdateValue() && s6.UpdateValue()
+				       && s7.UpdateValue() && s8.UpdateValue() && s9.UpdateValue()
 #else
-					   s2.UpdateValue() && s6.UpdateValue()
-					   && s5.UpdateValue()
-					   && s1.UpdateValue() && s9.UpdateValue()
-					   && s4.UpdateValue() && s8.UpdateValue() 
-					   && s7.UpdateValue()  
+				       s2.UpdateValue() && s6.UpdateValue()
+				       && s5.UpdateValue()
+				       && s1.UpdateValue() && s9.UpdateValue()
+				       && s4.UpdateValue() && s8.UpdateValue() 
+				       && s7.UpdateValue()  
 #endif
-					   ) == false) {
+				       ) == false) {
 				count++;
 			}
 			printf("\n");
@@ -207,8 +207,3 @@ int main(int argc, char *argv[])
 	
    	return 0;
 }
-
-/* Local variables: */
-/* tab-width: 4 */
-/* End: */
-/* vi:set tabstop=4: */
