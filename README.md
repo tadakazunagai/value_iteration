@@ -1,7 +1,7 @@
 # value_iteration
 価値反復(value iteration)アルゴリズム
 
-## 2016年11月に書いたプログラム
+## 2016年11月18日に書いたプログラム
 
 - 千葉工業大学の上田隆一先生の「[確率ロボティクス2016第8回](https://lab.ueda.tech/?page=prob_robot_2016_08)」の問題
     - val_ite.cpp // 問題３、４のプログラム
